@@ -25,8 +25,8 @@ function UserDetails() {
 
     return (
         <div className='user-detail'>
-            <h2 className='header'>User Details</h2>
             <div className='container-fluid'>
+            <h2 className='header'>User Details</h2>
                 <div className="row user-row">
                     {userData?.map((item) => (
                         <div key={item?.id} className="col-xs-1 col-sm-1 col-md-2 col-lg-4 col user-col">
@@ -44,12 +44,14 @@ function UserDetails() {
                         </div>
                     ))}
                 </div>
+                <div className='pagination'>
+                <Pagination
+                    total={totalPage}
+                    current={page}
+                    onChangePage={handleChangePage}
+                />
+                </div>
             </div>
-            <Pagination
-                total={totalPage}
-                current={page}
-                onChangePage={handleChangePage}
-            />
         </div>
     )
 }
